@@ -27,13 +27,13 @@ if(isset($_POST["add_tax"]))
 
     if(empty($_POST["tax_name"]))
     {
-        $error .= '<li>Tax Name is required</li>';
+        $error .= '<li>Le nom de la taxe est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["tax_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -43,13 +43,13 @@ if(isset($_POST["add_tax"]))
 
     if(empty($_POST["tax_percentage"]))
     {
-        $error .= '<li>Tax Percentage is required</li>';
+        $error .= '<li>Le pourcentage de taxe est requis</li>';
     }
     else
     {
         if (!preg_match("/^[0-9.' ]*$/", $_POST["tax_percentage"]))
         {
-            $error .= '<li>Only Numbers allowed</li>';
+            $error .= '<li>les chiffres sont autorisés</li>';
         }
         else
         {
@@ -68,7 +68,7 @@ if(isset($_POST["add_tax"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Tax Name Already Exists</li>';
+            $error = '<li>Le nom de taxe existe déjà</li>';
         }
         else
         {
@@ -99,13 +99,13 @@ if(isset($_POST["edit_tax"]))
 
     if(empty($_POST["tax_name"]))
     {
-        $error .= '<li>Tax Name is required</li>';
+        $error .= '<li>Le nom de la taxe est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["tax_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -115,13 +115,13 @@ if(isset($_POST["edit_tax"]))
 
     if(empty($_POST["tax_percentage"]))
     {
-        $error .= '<li>Tax Percentage is required</li>';
+        $error .= '<li>Le pourcentage de taxe est requis</li>';
     }
     else
     {
         if (!preg_match("/^[0-9.' ]*$/", $_POST["tax_percentage"]))
         {
-            $error .= '<li>Only Numbers allowed</li>';
+            $error .= '<li>les chiffres sont autorisés</li>';
         }
         else
         {
@@ -143,7 +143,7 @@ if(isset($_POST["edit_tax"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Tax Name Already Exists</li>';
+            $error = '<li>Le nom de taxe existe déjà</li>';
         }
         else
         {
@@ -197,7 +197,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Tax Management</h1>
+                            <h1 class="mt-4">Gestion fiscale</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -208,8 +208,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="tax.php">Tax Management</a></li>
-                                <li class="breadcrumb-item active">Add Tax</li>
+                                <li class="breadcrumb-item"><a href="tax.php">Gestion fiscale</a></li>
+                                <li class="breadcrumb-item active">Gestion fiscale</li>
                             </ol>
                             <div class="row">
                                 <div class="col-md-6">
@@ -221,20 +221,20 @@ include('header.php');
                                     ?>
                                     <div class="card mb-4">
                                         <div class="card-header">
-                                            <i class="fas fa-user-plus"></i> Add New Tax Detail
+                                            <i class="fas fa-user-plus"></i> Ajouter un nouveau détail fiscal
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="tax_name" type="text" placeholder="Enter Tax Name" name="tax_name" value="<?php if(isset($_POST["tax_name"])) echo $_POST["tax_name"]; ?>" />
-                                                    <label for="tax_name">Tax Name</label>
+                                                    <input class="form-control" id="tax_name" type="text" placeholder="Entrez le nom de la taxe" name="tax_name" value="<?php if(isset($_POST["tax_name"])) echo $_POST["tax_name"]; ?>" />
+                                                    <label for="tax_name">Nom fiscal</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="tax_percentage" type="number" placeholder="Enter Tax Percentage" name="tax_percentage" value="<?php if(isset($_POST["tax_percentage"])) echo $_POST["tax_percentage"]; ?>" />
-                                                    <label for="tax_percentage">Tax Percentage</label>
+                                                    <input class="form-control" id="tax_percentage" type="number" placeholder="Entrez le pourcentage de taxe" name="tax_percentage" value="<?php if(isset($_POST["tax_percentage"])) echo $_POST["tax_percentage"]; ?>" />
+                                                    <label for="tax_percentage">Pourcentage de taxe</label>
                                                 </div>
                                                 <div class="mt-4 mb-0">
-                                                    <input type="submit" name="add_tax" class="btn btn-success" value="Add" />
+                                                    <input type="submit" name="add_tax" class="btn btn-success" value="Ajouter" />
                                                 </div>
                                             </form>
                                         </div>
@@ -261,8 +261,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="tax.php">Tax Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Tax</li>
+                                    <li class="breadcrumb-item"><a href="tax.php">Gestion fiscale</a></li>
+                                    <li class="breadcrumb-item active">Modifier la taxe</li>
                                 </ol>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -274,21 +274,21 @@ include('header.php');
                                         ?>
                                         <div class="card mb-4">
                                             <div class="card-header">
-                                                <i class="fas fa-user-edit"></i> Edit Tax Details
+                                                <i class="fas fa-user-edit"></i>Modifier les détails fiscaux
                                             </div>
                                             <div class="card-body">
                                                 <form method="post">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="tax_name" type="text" placeholder="Enter Tax Name" name="tax_name" value="<?php echo $tax_row["tax_name"]; ?>" />
-                                                        <label for="tax_name">Tax Name</label>
+                                                        <input class="form-control" id="tax_name" type="text" placeholder="Entrez le nom de la taxe" name="tax_name" value="<?php echo $tax_row["tax_name"]; ?>" />
+                                                        <label for="tax_name">Nom fiscal</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="tax_percentage" type="number" placeholder="Enter Tax Percentage" name="tax_percentage" value="<?php echo $tax_row["tax_percentage"]; ?>" />
-                                                        <label for="tax_percentage">Tax Percentage</label>
+                                                        <input class="form-control" id="tax_percentage" type="number" placeholder="Entrez le pourcentage de taxe" name="tax_percentage" value="<?php echo $tax_row["tax_percentage"]; ?>" />
+                                                        <label for="tax_percentage">Pourcentage de taxe</label>
                                                     </div>
                                                     <div class="mt-4 mb-0">
                                                         <input type="hidden" name="tax_id" value="<?php echo trim($_GET["code"]); ?>" />
-                                                        <input type="submit" name="edit_tax" class="btn btn-primary" value="Edit" />
+                                                        <input type="submit" name="edit_tax" class="btn btn-primary" value="Modifier" />
                                                     </div>
                                                 </form>
                                             </div>
@@ -317,7 +317,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Tax Management</li>
+                                <li class="breadcrumb-item active">Gestion fiscale</li>
                             </ol>
 
                             <?php
@@ -326,19 +326,19 @@ include('header.php');
                             {
                                 if($_GET["msg"] == 'add')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">New Tax Added<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Nouvelle taxe ajoutée<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'edit')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Tax Data Edited <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Données fiscales modifiées <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'disable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Tax Status Change to Disable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification du statut fiscal à Désactiver <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'enable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Tax Status Change to Enable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification du statut fiscal à Activer <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                             }
 
@@ -347,10 +347,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Tax Management
+                                            <i class="fas fa-table me-1"></i> Gestion fiscale
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="tax.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="tax.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -359,11 +359,11 @@ include('header.php');
                                     <table id="tax_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Tax Name</th>
-                                                <th>Percentage</th>
-                                                <th>Status</th>
-                                                <th>Added On</th>
-                                                <th>Updated On</th>
+                                                <th>Nom fiscal</th>
+                                                <th>Pourcentage</th>
+                                                <th>Statut</th>
+                                                <th>Ajouté le</th>
+                                                <th>Mis à jour le</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

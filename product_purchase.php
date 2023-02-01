@@ -114,7 +114,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_expired_year"]))
     {
-        $error .= '<li>L'année d'expiration est requise</li>';
+        $error .= '<li>année d expiration est requise</li>';
     }
     else
     {

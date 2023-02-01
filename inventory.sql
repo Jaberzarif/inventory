@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2023 at 07:32 AM
+-- Generation Time: Feb 01, 2023 at 07:50 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -262,9 +262,9 @@ CREATE TABLE `order_ims` (
 --
 
 INSERT INTO `order_ims` (`order_id`, `buyer_name`, `order_total_amount`, `order_created_by`, `order_status`, `order_added_on`, `order_updated_on`, `order_tax_name`, `order_tax_percentage`) VALUES
-(3, 'Donna Hubber', '407.10', 1, 'Enable', '2022-05-13 15:52:26', '2022-05-13 16:03:12', 'CGST, SGST', '9.00, 9.00'),
-(5, 'Jatin Yadav', '149.57', 1, 'Enable', '2022-05-13 16:23:40', '2022-05-13 16:25:04', 'CGST, SGST', '9.00, 9.00'),
-(6, 'Jayesh Bhai', '444.27', 1, 'Enable', '2022-05-14 17:12:22', '2023-02-01 06:38:58', 'CGST, SGST', '9.00, 9.00'),
+(3, 'Sami Dridi', '407.10', 1, 'Enable', '2022-05-13 15:52:26', '2023-02-01 19:43:59', 'CGST, SGST', '9.00, 9.00'),
+(5, 'Mohamed Ali', '149.57', 1, 'Enable', '2022-05-13 16:23:40', '2023-02-01 19:43:44', 'CGST, SGST', '9.00, 9.00'),
+(6, 'Sami Bougtef', '444.27', 1, 'Enable', '2022-05-14 17:12:22', '2023-02-01 19:43:32', 'CGST, SGST', '9.00, 9.00'),
 (7, 'Moez Chebbi', '59.00', 1, 'Enable', '2023-02-01 06:58:13', '2023-02-01 06:58:13', 'TVA', '18.00');
 
 -- --------------------------------------------------------
@@ -340,11 +340,11 @@ CREATE TABLE `supplier_ims` (
 --
 
 INSERT INTO `supplier_ims` (`supplier_id`, `supplier_name`, `supplier_address`, `supplier_contact_no`, `supplier_email`, `supplier_status`, `supplier_datetime`) VALUES
-(1, 'Acme Fastners', '30, Baroda Co Operative Estate, TP 13, Chhani Jakatnaka', '9632574531', 'acmefastners@gmail.com', 'Enable', '2022-05-10 16:10:26'),
-(2, 'Sapani Fastners', '7, Bahulkar Chambers', '8521479630', 'sapanifastners@gmail.com', 'Enable', '2022-05-14 15:37:53'),
-(3, 'KB Fastners', '1 Jay Malhar Nivas', '8539517520', 'kbfastners@gmail.com', 'Enable', '2022-05-14 15:38:42'),
-(4, 'NK Fastners', 'Shahjanand Complex', '7539518520', 'nkfastners@gmail.com', 'Enable', '2022-05-14 15:39:36'),
-(5, 'BM Fastners', '1 Jay Malhar Nivas', '9517538630', 'bmfastners@gmail.com', 'Enable', '2022-05-14 15:40:29');
+(1, 'Jouet Gold', 'Tunis', '9632574531', 'jouet.gold@gmail.com', 'Enable', '2022-05-10 16:10:26'),
+(2, 'Accessoire Tunisie', 'Tunis', '8521479630', 'at@gmail.com', 'Enable', '2022-05-14 15:37:53'),
+(3, 'Lego House', 'Tunis', '8539517520', 'lego@gmail.com', 'Enable', '2022-05-14 15:38:42'),
+(4, 'Mytek', 'Tunis', '7539518520', 'Mytek@gmail.com', 'Enable', '2022-05-14 15:39:36'),
+(5, 'Jumia', 'Tunis', '9517538630', 'jumia@gmail.com', 'Enable', '2022-05-14 15:40:29');
 
 -- --------------------------------------------------------
 
@@ -389,7 +389,7 @@ CREATE TABLE `user_ims` (
 --
 
 INSERT INTO `user_ims` (`user_id`, `user_name`, `user_email`, `user_password`, `user_type`, `user_status`, `user_created_on`) VALUES
-(1, 'Jaber Zarif', 'jaber.zarif@gmail.com', 'admin', 'Master', 'Enable', '2023-02-01 06:19:15'),
+(1, 'Sihem Hadj Bougtef', 'sihemhadjbougtefgmail.com', 'admin', 'Master', 'Enable', '2023-02-01 06:19:15'),
 (2, 'Test Account', 'test@gmail.com', '12345678900', 'User', 'Enable', '2023-02-01 07:07:09');
 
 --

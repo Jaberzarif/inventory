@@ -26,13 +26,13 @@ if(isset($_POST["add_user"]))
 
     if(empty($_POST["user_name"]))
     {
-        $error .= '<li>User Name is required</li>';
+        $error .= '<li>Nom d utilisateur est nécessaire</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST["user_name"]))
         {
-            $error .= '<li>Only letters and white space allowed</li>';
+            $error .= '<li>Seules les lettres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -42,13 +42,13 @@ if(isset($_POST["add_user"]))
 
     if(empty($_POST["user_email"]))
     {
-        $error .= '<li>Email Address is required</li>';
+        $error .= '<li>Adresse e-mail est nécessaire</li>';
     }
     else
     {
         if(!filter_var($_POST["user_email"], FILTER_VALIDATE_EMAIL))
         {
-            $error .= '<li>Invalid Email Address</li>';
+            $error .= '<li>Adresse e-mail invalide</li>';
         }
         else
         {
@@ -58,7 +58,7 @@ if(isset($_POST["add_user"]))
 
     if(empty($_POST["user_password"]))
     {
-        $error .= '<li>Password is required</li>';
+        $error .= '<li>Mot de passe requis</li>';
     }
     else
     {
@@ -76,7 +76,7 @@ if(isset($_POST["add_user"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Email Address Already Exists</li>';
+            $error = '<li>L adresse mail existe déjà</li>';
         }
         else
         {
@@ -108,13 +108,13 @@ if(isset($_POST["edit_user"]))
 
     if(empty($_POST["user_name"]))
     {
-        $error .= '<li>User Name is required</li>';
+        $error .= '<li>Nom d utilisateur est nécessaire</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST["user_name"]))
         {
-            $error .= '<li>Only letters and white space allowed</li>';
+            $error .= '<li>Seules les lettres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -124,13 +124,13 @@ if(isset($_POST["edit_user"]))
 
     if(empty($_POST["user_email"]))
     {
-        $error .= '<li>Email Address is required</li>';
+        $error .= '<li>Adresse e-mail est nécessaire</li>';
     }
     else
     {
         if(!filter_var($_POST["user_email"], FILTER_VALIDATE_EMAIL))
         {
-            $error .= '<li>Invalid Email Address</li>';
+            $error .= '<li>Adresse e-mail invalide</li>';
         }
         else
         {
@@ -140,7 +140,7 @@ if(isset($_POST["edit_user"]))
 
     if(empty($_POST["user_password"]))
     {
-        $error .= '<li>Password is required</li>';
+        $error .= '<li>Mot de passe requis</li>';
     }
     else
     {
@@ -161,7 +161,7 @@ if(isset($_POST["edit_user"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Email Address Already Exists</li>';
+            $error = '<li>L adresse mail existe déjà</li>';
         }
         else
         {
@@ -227,7 +227,7 @@ include('header.php');
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
                                 <li class="breadcrumb-item"><a href="user.php">Gestion des utilisateurs</a></li>
-                                <li class="breadcrumb-item active">Add User</li>
+                                <li class="breadcrumb-item active">Ajouter un utilisateur</li>
                             </ol>
                             <div class="row">
                                 <div class="col-md-6">
@@ -256,7 +256,7 @@ include('header.php');
                                                     <label for="user_password">Mot de passe</label>
                                                 </div>
                                                 <div class="mt-4 mb-0">
-                                                    <input type="submit" name="add_user" class="btn btn-success" value="Add" />
+                                                    <input type="submit" name="add_user" class="btn btn-success" value="Ajouter" />
                                                 </div>
                                             </form>
                                         </div>
@@ -314,7 +314,7 @@ include('header.php');
                                                     </div>
                                                     <div class="mt-4 mb-0">
                                                         <input type="hidden" name="user_id" value="<?php echo trim($_GET["code"]); ?>" />
-                                                        <input type="submit" name="edit_user" class="btn btn-primary" value="Edit" />
+                                                        <input type="submit" name="edit_user" class="btn btn-primary" value="Modifier" />
                                                     </div>
                                                 </form>
                                             </div>

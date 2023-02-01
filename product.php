@@ -42,7 +42,7 @@ if(isset($_POST["add_product"]))
 
     if(empty($_POST["item_name"]))
     {
-        $error .= '<li>Product Name is required</li>';
+        $error .= '<li>Le nom du produit est requis</li>';
     }
     else
     {

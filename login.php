@@ -107,6 +107,9 @@ if(isset($_POST["login_button"]))
                             <div class="col-lg-5">
                                 <br />
                                 <br />
+                                <center>
+                                <img class="text-center" src="img/logo8.jpg" title="logo" alt="logo" width="100" height="100"/>
+                                </center>
                                 <h1 class="text-center text-danger mt-5"><b>Coin des Jouets</b></h1>
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Connexion de l'administrateur</h3></div>

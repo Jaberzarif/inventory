@@ -28,13 +28,13 @@ if(isset($_POST["submit"]))
 
     if(empty($_POST["store_name"]))
     {
-        $error .= '<li>Store Name is required</li>';
+        $error .= '<li>Le nom du magasin est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["store_name"]))
         {
-            $error .= '<li>Only letters, Numbers and Space allowed</li>';
+            $error .= '<li>les lettres, les chiffres et les espaces sont autorisés</li>';
         }
         else
         {
@@ -44,13 +44,13 @@ if(isset($_POST["submit"]))
 
     if(empty($_POST["store_address"]))
     {
-        $error .= '<li>Address is required</li>';
+        $error .= '<li>Adresse est obligatoire</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["store_address"]))
         {
-            $error .= '<li>Only letters, Numbers and Space allowed</li>';
+            $error .= '<li>les lettres, les chiffres et les espaces sont autorisés</li>';
         }
         else
         {
@@ -60,13 +60,13 @@ if(isset($_POST["submit"]))
 
     if(empty($_POST["store_contact_no"]))
     {
-        $error .= '<li>Contact No. is required</li>';
+        $error .= '<li>Le numéro de contact est requis</li>';
     }
     else
     {
         if (!preg_match("/^[0-9']*$/", $_POST["store_contact_no"]))
         {
-            $error .= '<li>Only Numbers allowed</li>';
+            $error .= '<li>Le numéro de contact est requis</li>';
         }
         else
         {
@@ -76,7 +76,7 @@ if(isset($_POST["submit"]))
 
     if(empty($_POST["store_email_address"]))
     {
-        $error .= '<li>Email Address is required</li>';
+        $error .= '<li>Adresse e-mail est nécessaire</li>';
     }
     else
     {
@@ -101,7 +101,7 @@ if(isset($_POST["submit"]))
 
     if(empty($_POST["store_currency"]))
     {
-        $error .= '<li>Currency is required</li>';
+        $error .= '<li>La devise est requise</li>';
     }
     else
     {
@@ -135,7 +135,7 @@ if(isset($_POST["submit"]))
 
         $object->execute($data);
 
-        $message = '<div class="alert alert-success">Data Successfully Change</div>';
+        $message = '<div class="alert alert-success">Les données ont été modifiées avec succès</div>';
     }
 }
 
@@ -152,7 +152,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Setting</h1>
+                            <h1 class="mt-4">Paramètre</h1>
 
                             <?php
                             foreach($result as $row)
@@ -160,7 +160,7 @@ include('header.php');
                             ?>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Setting</li>
+                                <li class="breadcrumb-item active">Paramètre</li>
                             </ol>
                             <div class="row">
                                 <div class="col-md-6">
@@ -173,37 +173,37 @@ include('header.php');
                                 ?>
                                     <div class="card mb-4">
                                         <div class="card-header">
-                                            <i class="fas fa-user-edit"></i> Setting
+                                            <i class="fas fa-user-edit"></i> Paramètre
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="store_name" type="text" name="store_name" placeholder="Enter Store Name" value="<?php echo $row['store_name']; ?>" />
-                                                    <label for="store_name">Store Name</label>
+                                                    <input class="form-control" id="store_name" type="text" name="store_name" placeholder="Entrez le nom du magasin" value="<?php echo $row['store_name']; ?>" />
+                                                    <label for="store_name">Nom du magasin</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <textarea class="form-control" id="store_address" name="store_address" placeholder="Enter Address"><?php echo $row['store_address']; ?></textarea>
-                                                    <label for="store_address">Address</label>
+                                                    <textarea class="form-control" id="store_address" name="store_address" placeholder="Entrer l'adresse"><?php echo $row['store_address']; ?></textarea>
+                                                    <label for="store_address">Adresse</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="store_contact_no" type="text" name="store_contact_no" placeholder="Enter Contact No." value="<?php echo $row['store_contact_no']; ?>" />
-                                                    <label for="store_contact_no">Contact No.</label>
+                                                    <input class="form-control" id="store_contact_no" type="text" name="store_contact_no" placeholder="Entrez le numéro de contact." value="<?php echo $row['store_contact_no']; ?>" />
+                                                    <label for="store_contact_no">N° de contact.</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="store_email_address" type="text" name="store_email_address" placeholder="Enter Email Address" value="<?php echo $row['store_email_address']; ?>" />
-                                                    <label for="store_email_address">Email Address</label>
+                                                    <input class="form-control" id="store_email_address" type="text" name="store_email_address" placeholder="Adresse e-mail" value="<?php echo $row['store_email_address']; ?>" />
+                                                    <label for="store_email_address">Adresse e-mail</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
                                                     <select class="form-control" id="store_timezone" name="store_timezone">
                                                         <?php echo $object->Timezone_list(); ?>
                                                     </select>
-                                                    <label for="store_timezone">Timezone</label>
+                                                    <label for="store_timezone">Fuseau horaire</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
                                                     <select class="form-control" id="store_currency" name="store_currency">
                                                         <?php echo $object->Currency_list(); ?>
                                                     </select>
-                                                    <label for="store_timezone">Currenecy</label>
+                                                    <label for="store_timezone">Devise</label>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                     <input type="hidden" name="store_id" value="<?php echo $row['store_id']; ?>" />

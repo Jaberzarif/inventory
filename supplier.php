@@ -26,7 +26,7 @@ if(isset($_POST["add_supplier"]))
 
     if(empty($_POST["supplier_name"]))
     {
-        $error .= '<li>Supplier Name is required</li>';
+        $error .= '<li>Le nom du fournisseur est requis</li>';
     }
     else
     {
@@ -35,7 +35,7 @@ if(isset($_POST["add_supplier"]))
 
     if(empty($_POST["supplier_address"]))
     {
-        $error .= '<li>Supplier Address is required</li>';
+        $error .= '<li>Le nom du fournisseur est requis</li>';
     }
     else
     {
@@ -44,13 +44,13 @@ if(isset($_POST["add_supplier"]))
 
     if(empty($_POST["supplier_contact_no"]))
     {
-        $error .= '<li>Supplier Contact Number is required</li>';
+        $error .= '<li>Le numéro de contact du fournisseur est requis</li>';
     }
     else
     {
         if(!preg_match('/^[0-9]{10}+$/', $_POST["supplier_contact_no"]))
         {
-            $error .= '<li>Invalid Supplier Contact Number</li>';
+            $error .= '<li>Numéro de contact du fournisseur non valide</li>';
         }
         else
         {
@@ -60,13 +60,13 @@ if(isset($_POST["add_supplier"]))
 
     if(empty($_POST["supplier_email"]))
     {
-        $error .= '<li>Supplier Email is required</li>';
+        $error .= '<li>e-mail du fournisseur est requis</li>';
     }
     else
     {
         if(!filter_var($_POST["supplier_email"], FILTER_VALIDATE_EMAIL))
         {
-            $error .= '<li>Invalid Supplier Email Address</li>';
+            $error .= '<li>Adresse e-mail du fournisseur non valide</li>';
         }
         else
         {
@@ -85,7 +85,7 @@ if(isset($_POST["add_supplier"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Supplier Already Exists</li>';
+            $error = '<li>Le fournisseur existe déjà</li>';
         }
         else
         {
@@ -117,7 +117,7 @@ if(isset($_POST["edit_supplier"]))
 
     if(empty($_POST["supplier_name"]))
     {
-        $error .= '<li>Supplier Name is required</li>';
+        $error .= '<li>Le nom du fournisseur est requis</li>';
     }
     else
     {
@@ -126,7 +126,7 @@ if(isset($_POST["edit_supplier"]))
 
     if(empty($_POST["supplier_address"]))
     {
-        $error .= '<li>Supplier Address is required</li>';
+        $error .= '<li>Adresse du fournisseur est obligatoire</li>';
     }
     else
     {
@@ -135,13 +135,13 @@ if(isset($_POST["edit_supplier"]))
 
     if(empty($_POST["supplier_contact_no"]))
     {
-        $error .= '<li>Supplier Contact Number is required</li>';
+        $error .= '<li>Le numéro de contact du fournisseur est requis</li>';
     }
     else
     {
         if(!preg_match('/^[0-9]{10}+$/', $_POST["supplier_contact_no"]))
         {
-            $error .= '<li>Invalid Supplier Contact Number</li>';
+            $error .= '<li>Numéro de contact du fournisseur non valide</li>';
         }
         else
         {
@@ -157,7 +157,7 @@ if(isset($_POST["edit_supplier"]))
     {
         if(!filter_var($_POST["supplier_email"], FILTER_VALIDATE_EMAIL))
         {
-            $error .= '<li>Invalid Supplier Email Address</li>';
+            $error .= '<li>Adresse e-mail du fournisseur non valide</li>';
         }
         else
         {
@@ -179,7 +179,7 @@ if(isset($_POST["edit_supplier"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Supplier Already Exists</li>';
+            $error = '<li>Le fournisseur existe déjà</li>';
         }
         else
         {
@@ -235,7 +235,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Supplier Management</h1>
+                            <h1 class="mt-4">Le fournisseur existe déjà</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -246,8 +246,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="supplier.php">Supplier Management</a></li>
-                                <li class="breadcrumb-item active">Add New Supplier</li>
+                                <li class="breadcrumb-item"><a href="supplier.php">Gestion des fournisseurs</a></li>
+                                <li class="breadcrumb-item active">Ajouter un nouveau fournisseur</li>
                             </ol>
                             <div class="row">
                                 <div class="col-md-6">
@@ -259,28 +259,28 @@ include('header.php');
                                     ?>
                                     <div class="card mb-4">
                                         <div class="card-header">
-                                            <i class="fas fa-user-plus"></i> Add New Supplier
+                                            <i class="fas fa-user-plus"></i> Ajouter un nouveau fournisseur
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="supplier_name" type="text" placeholder="Enter Supplier Name" name="supplier_name" value="<?php if(isset($_POST["supplier_name"])) echo $_POST["supplier_name"]; ?>" />
-                                                    <label for="supplier_name">Supplier Name</label>
+                                                    <input class="form-control" id="supplier_name" type="text" placeholder="Entrez le nom du fournisseur" name="supplier_name" value="<?php if(isset($_POST["supplier_name"])) echo $_POST["supplier_name"]; ?>" />
+                                                    <label for="supplier_name">Nom du fournisseur</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <textarea class="form-control" id="supplier_address" placeholder="Enter Supplier Address" name="supplier_address"><?php if(isset($_POST["supplier_address"])) echo $_POST["supplier_address"]; ?></textarea>
-                                                    <label for="supplier_address">Address</label>
+                                                    <textarea class="form-control" id="supplier_address" placeholder="Entrez l'adresse du fournisseur" name="supplier_address"><?php if(isset($_POST["supplier_address"])) echo $_POST["supplier_address"]; ?></textarea>
+                                                    <label for="supplier_address">Adresse</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="supplier_contact_no" type="text" placeholder="Enter Supplier Contact Number" name="supplier_contact_no" value="<?php if(isset($_POST["supplier_contact_no"])) echo $_POST["supplier_contact_no"]; ?>" />
-                                                    <label for="supplier_contact_no">Contact No.</label>
+                                                    <input class="form-control" id="supplier_contact_no" type="text" placeholder="Entrez le numéro de contact du fournisseur" name="supplier_contact_no" value="<?php if(isset($_POST["supplier_contact_no"])) echo $_POST["supplier_contact_no"]; ?>" />
+                                                    <label for="supplier_contact_no">N° de contact.</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="supplier_email" type="text" placeholder="Enter Supplier Email Address" name="supplier_email" value="<?php if(isset($_POST["supplier_email"])) echo $_POST["supplier_email"]; ?>" />
-                                                    <label for="supplier_email">Email Address</label>
+                                                    <input class="form-control" id="supplier_email" type="text" placeholder="Entrez l'adresse e-mail du fournisseur" name="supplier_email" value="<?php if(isset($_POST["supplier_email"])) echo $_POST["supplier_email"]; ?>" />
+                                                    <label for="supplier_email">Adresse e-mail</label>
                                                 </div>
                                                 <div class="mt-4 mb-0">
-                                                    <input type="submit" name="add_supplier" class="btn btn-success" value="Add" />
+                                                    <input type="submit" name="add_supplier" class="btn btn-success" value="Ajouter" />
                                                 </div>
                                             </form>
                                         </div>
@@ -307,8 +307,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="supplier.php">Supplier Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Supplier Data</li>
+                                    <li class="breadcrumb-item"><a href="supplier.php">Gestion des fournisseurs</a></li>
+                                    <li class="breadcrumb-item active">Modifier les données du fournisseur</li>
                                 </ol>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -320,29 +320,29 @@ include('header.php');
                                         ?>
                                         <div class="card mb-4">
                                             <div class="card-header">
-                                                <i class="fas fa-user-edit"></i> Edit Supplier Data
+                                                <i class="fas fa-user-edit"></i> Modifier les données du fournisseur
                                             </div>
                                             <div class="card-body">
                                                 <form method="post">
                                                     <div class="form-floating mb-3">
-                                                    <input class="form-control" id="supplier_name" type="text" placeholder="Enter Supplier Name" name="supplier_name" value="<?php echo $supplier_row["supplier_name"]; ?>" />
-                                                    <label for="supplier_name">Supplier Name</label>
+                                                    <input class="form-control" id="supplier_name" type="text" placeholder="Entrez le nom du fournisseur" name="supplier_name" value="<?php echo $supplier_row["supplier_name"]; ?>" />
+                                                    <label for="supplier_name">Nom du fournisseur</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <textarea class="form-control" id="supplier_address" placeholder="Enter Supplier Address" name="supplier_address"><?php echo $supplier_row["supplier_address"]; ?></textarea>
-                                                    <label for="supplier_address">Address</label>
+                                                    <textarea class="form-control" id="supplier_address" placeholder="Entrez l'adresse du fournisseur" name="supplier_address"><?php echo $supplier_row["supplier_address"]; ?></textarea>
+                                                    <label for="supplier_address">Adresse</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="supplier_contact_no" type="text" placeholder="Enter Supplier Contact Number" name="supplier_contact_no" value="<?php echo $supplier_row["supplier_contact_no"]; ?>" />
-                                                    <label for="supplier_contact_no">Contact No.</label>
+                                                    <input class="form-control" id="supplier_contact_no" type="text" placeholder="Entrez le numéro de contact du fournisseur" name="supplier_contact_no" value="<?php echo $supplier_row["supplier_contact_no"]; ?>" />
+                                                    <label for="supplier_contact_no">N° de contact.</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="supplier_email" type="text" placeholder="Enter Supplier Email Address" name="supplier_email" value="<?php echo $supplier_row["supplier_email"]; ?>" />
-                                                    <label for="supplier_email">Email Address</label>
+                                                    <input class="form-control" id="supplier_email" type="text" placeholder="Entrez l'adresse e-mail du fournisseur" name="supplier_email" value="<?php echo $supplier_row["supplier_email"]; ?>" />
+                                                    <label for="supplier_email">Adresse e-mail</label>
                                                 </div>
                                                     <div class="mt-4 mb-0">
                                                         <input type="hidden" name="supplier_id" value="<?php echo trim($_GET["code"]); ?>" />
-                                                        <input type="submit" name="edit_supplier" class="btn btn-primary" value="Edit" />
+                                                        <input type="submit" name="edit_supplier" class="btn btn-primary" value="Modifier" />
                                                     </div>
                                                 </form>
                                             </div>
@@ -371,7 +371,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Suplier Management</li>
+                                <li class="breadcrumb-item active">Gestion des fournisseurs</li>
                             </ol>
 
                             <?php
@@ -401,10 +401,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Supplier Management
+                                            <i class="fas fa-table me-1"></i> Gestion des fournisseurs
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="supplier.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="supplier.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -413,12 +413,12 @@ include('header.php');
                                     <table id="supplier_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Supplier Name</th>
-                                                <th>Address</th>
-                                                <th>Contact No.</th>
-                                                <th>Email</th>
-                                                <th>Status</th>
-                                                <th>Date & Time</th>
+                                                <th>Nom du fournisseur</th>
+                                                <th>Adresse</th>
+                                                <th>N° de contact.</th>
+                                                <th>E-mail</th>
+                                                <th>Statut</th>
+                                                <th>Date et heure</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
