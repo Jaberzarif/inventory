@@ -29,7 +29,7 @@ if(isset($_POST["edit_user"]))
 
     if(empty($_POST["user_name"]))
     {
-        $error .= '<li>User Name is required</li>';
+        $error .= '<li>Nom d utilisateur est nécessaire</li>';
     }
     else
     {

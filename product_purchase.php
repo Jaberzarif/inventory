@@ -28,7 +28,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_id"]))
     {
-        $error .= '<li>Product Name is required</li>';
+        $error .= '<li>Le nom du produit est requis</li>';
     }
     else
     {
@@ -37,7 +37,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["supplier_id"]))
     {
-        $error .= '<li>Supplier is required</li>';
+        $error .= '<li>Le fournisseur est requis</li>';
     }
     else
     {
@@ -46,13 +46,13 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_batch_no"]))
     {
-        $error .= '<li>Batch No. is required</li>';
+        $error .= '<li>Le numéro de lot est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9 ']*$/", $_POST["item_batch_no"]))
         {
-            $error .= '<li>Only letters and Numbers allowed</li>';
+            $error .= '<li>Seules les lettres et les chiffres sont autorisés</li>';
         }
         else
         {
@@ -62,13 +62,13 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_purchase_qty"]))
     {
-        $error .= '<li>Purchase Quantity is required</li>';
+        $error .= '<li>La quantité d achat est requise</li>';
     }
     else
     {
         if (!preg_match("/^[0-9.']*$/", $_POST["item_purchase_qty"]))
         {
-            $error .= '<li>Only Numbers allowed</li>';
+            $error .= '<li>Seuls les numéros autorisés</li>';
         }
         else
         {
@@ -78,7 +78,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_purchase_price_per_unit"]))
     {
-        $error .= '<li>Purchase Price per unit is required</li>';
+        $error .= '<li>Le prix d achat par unité est requis</li>';
     }
     else
     {
@@ -96,7 +96,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_manufacture_year"]))
     {
-        $error .= '<li>Manufacturing Year is required</li>';
+        $error .= '<li>Le mois de fabrication est requis</li>';
     }
     else
     {
@@ -105,7 +105,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_expired_month"]))
     {
-        $error .= '<li>Expired Month is required</li>';
+        $error .= '<li>Mois expiré est requis</li>';
     }
     else
     {
@@ -114,7 +114,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_expired_year"]))
     {
-        $error .= '<li>Expired Year is required</li>';
+        $error .= '<li>L'année d'expiration est requise</li>';
     }
     else
     {
@@ -123,7 +123,7 @@ if(isset($_POST["add_purchase"]))
 
     if(empty($_POST["item_sale_price_per_unit"]))
     {
-        $error .= '<li>Sale Price per unit is required</li>';
+        $error .= '<li>Le prix de vente par unité est requis</li>';
     }
     else
     {
@@ -178,7 +178,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_id"]))
     {
-        $error .= '<li>Product Name is required</li>';
+        $error .= '<li>Le nom du produit est requis</li>';
     }
     else
     {
@@ -187,7 +187,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["supplier_id"]))
     {
-        $error .= '<li>Supplier is required</li>';
+        $error .= '<li>Le fournisseur est requis</li>';
     }
     else
     {
@@ -196,13 +196,13 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_batch_no"]))
     {
-        $error .= '<li>Batch No. is required</li>';
+        $error .= '<li>Le numéro de lot est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9 ']*$/", $_POST["item_batch_no"]))
         {
-            $error .= '<li>Only letters and Numbers allowed</li>';
+            $error .= '<li>Seules les lettres et les chiffres sont autorisés</li>';
         }
         else
         {
@@ -212,13 +212,13 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_purchase_qty"]))
     {
-        $error .= '<li>Purchase Quantity is required</li>';
+        $error .= '<li>La quantité d achat est requise</li>';
     }
     else
     {
         if (!preg_match("/^[0-9.']*$/", $_POST["item_purchase_qty"]))
         {
-            $error .= '<li>Only Numbers allowed</li>';
+            $error .= '<li>Seuls les numéros autorisés</li>';
         }
         else
         {
@@ -228,7 +228,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_purchase_price_per_unit"]))
     {
-        $error .= '<li>Purchase Price per unit is required</li>';
+        $error .= '<li>Le prix d achat par unité est requis</li>';
     }
     else
     {
@@ -246,7 +246,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_manufacture_year"]))
     {
-        $error .= '<li>Manufacturing Year is required</li>';
+        $error .= '<li>Le mois de fabrication est requis</li>';
     }
     else
     {
@@ -255,7 +255,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_expired_month"]))
     {
-        $error .= '<li>Expired Month is required</li>';
+        $error .= '<li>Mois expiré est requis</li>';
     }
     else
     {
@@ -264,7 +264,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_expired_year"]))
     {
-        $error .= '<li>Expired Year is required</li>';
+        $error .= '<li>L année d expiration est requise</li>';
     }
     else
     {
@@ -273,7 +273,7 @@ if(isset($_POST["edit_purchase"]))
 
     if(empty($_POST["item_sale_price_per_unit"]))
     {
-        $error .= '<li>Sale Price per unit is required</li>';
+        $error .= '<li>Le prix de vente par unité est requis</li>';
     }
     else
     {
@@ -430,7 +430,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Purchase Management</h1>
+                            <h1 class="mt-4">Gestion des achats</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -441,8 +441,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="product_purchase.php">Purchase Management</a></li>
-                                <li class="breadcrumb-item active">Add Purchase</li>
+                                <li class="breadcrumb-item"><a href="product_purchase.php">Gestion des achats</a></li>
+                                <li class="breadcrumb-item active">Ajouter un achat</li>
                             </ol>
 
                             <?php
@@ -454,14 +454,14 @@ include('header.php');
 
                             <div class="card mb-4">
                                 <div class="card-header">
-                                    <i class="fas fa-user-plus"></i> Add Purchase
+                                    <i class="fas fa-user-plus"></i> Ajouter un achat
                                 </div>
                                 <div class="card-body">
                                     <form method="post">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group mb-3">
-                                                    <label>Select Product</label>
+                                                    <label>Sélectionner un produit</label>
                                                     <select name="item_id" class="form-control input-lg selectpicker" id="item_id" data-live-search="true" data-size="5" data-allow-clear="true" data-noneSelectedText="Select Product">
                                                         <?php echo $object->fill_item(); ?>
                                                     </select>
@@ -480,7 +480,7 @@ include('header.php');
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group mb-3">
-                                                    <label>Select Supplier</label>
+                                                    <label>Sélectionnez le fournisseur</label>
                                                     <select name="supplier_id" class="form-control selectpicker" id="supplier_id" data-live-search="true" data-size="5" data-allow-clear="true">
                                                         <?php echo $object->fill_supplier(); ?>
                                                     </select>
@@ -500,14 +500,14 @@ include('header.php');
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="item_purchase_qty" type="number" placeholder="Enter Quantity" name="item_purchase_qty" value="<?php if(isset($_POST["item_purchase_qty"])) echo $_POST["item_purchase_qty"]; ?>" />
-                                                    <label for="item_purchase_qty">Quantity</label>
+                                                    <input class="form-control" id="item_purchase_qty" type="number" placeholder="Entrez la quantité" name="item_purchase_qty" value="<?php if(isset($_POST["item_purchase_qty"])) echo $_POST["item_purchase_qty"]; ?>" />
+                                                    <label for="item_purchase_qty">Quantité</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="item_purchase_price_per_unit" type="number" placeholder="Enter Purchase Price per Unit" name="item_purchase_price_per_unit" step=".01" value="<?php if(isset($_POST["item_purchase_price_per_unit"])) echo $_POST["item_purchase_price_per_unit"]; ?>" />
-                                                    <label for="item_purchase_price_per_unit">Purchase Price per Unit</label>
+                                                    <input class="form-control" id="item_purchase_price_per_unit" type="number" placeholder="Entrez le prix d'achat par unité" name="item_purchase_price_per_unit" step=".01" value="<?php if(isset($_POST["item_purchase_price_per_unit"])) echo $_POST["item_purchase_price_per_unit"]; ?>" />
+                                                    <label for="item_purchase_price_per_unit">Prix d'achat par unité</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -517,19 +517,19 @@ include('header.php');
                                                     <div class="col-md-6">
                                                         <div class="form-floating mb-3">
                                                             <select name="item_manufacture_month" class="form-control" id="item_manufacture_month">
-                                                                <option value="">Select</option>
-                                                                <option value="01">January</option>
-                                                                <option value="02">February</option>
-                                                                <option value="03">March</option>
-                                                                <option value="04">April</option>
-                                                                <option value="05">May</option>
-                                                                <option value="06">June</option>
-                                                                <option value="07">July</option>
-                                                                <option value="08">August</option>
-                                                                <option value="09">September</option>
-                                                                <option value="10">October</option>
-                                                                <option value="11">November</option>
-                                                                <option value="12">December</option>
+                                                                <option value="">Sélectionner</option>
+                                                                <option value="01">Janvier</option>
+                                                                <option value="02">Février</option>
+                                                                <option value="03">Mars</option>
+                                                                <option value="04">Avril</option>
+                                                                <option value="05">Mai</option>
+                                                                <option value="06">Juin</option>
+                                                                <option value="07">Juillet</option>
+                                                                <option value="08">Août</option>
+                                                                <option value="09">Septembre</option>
+                                                                <option value="10">Octobre</option>
+                                                                <option value="11">Novembre</option>
+                                                                <option value="12">Décembre</option>
                                                             </select>
                                                             <?php
                                                             if(isset($_POST["item_manufacture_month"]))
@@ -541,13 +541,13 @@ include('header.php');
                                                                 ';
                                                             }
                                                             ?>
-                                                            <label for="item_manufacture_month">Mfg. Month</label>
+                                                            <label for="item_manufacture_month">Mois de fabrication</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-floating mb-3">
                                                             <select name="item_manufacture_year" class="form-control" id="item_manufacture_year">
-                                                                <option value="">Select</option>
+                                                                <option value="">Sélectionner</option>
                                                                 <?php 
                                                                 for($i = date("Y"); $i < date("Y") + 10; $i++)
                                                                 {
@@ -565,7 +565,7 @@ include('header.php');
                                                                 ';
                                                             }
                                                             ?>
-                                                            <label for="item_manufacture_year">Mfg. Year</label>
+                                                            <label for="item_manufacture_year">Année de fabrication</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -575,19 +575,19 @@ include('header.php');
                                                     <div class="col-md-6">
                                                         <div class="form-floating mb-3">
                                                             <select name="item_expired_month" class="form-control" id="item_expired_month">
-                                                                <option value="">Select</option>
-                                                                <option value="01">January</option>
-                                                                <option value="02">February</option>
-                                                                <option value="03">March</option>
-                                                                <option value="04">April</option>
-                                                                <option value="05">May</option>
-                                                                <option value="06">June</option>
-                                                                <option value="07">July</option>
-                                                                <option value="08">August</option>
-                                                                <option value="09">September</option>
-                                                                <option value="10">October</option>
-                                                                <option value="11">November</option>
-                                                                <option value="12">December</option>
+                                                                <option value="">Sélectionner</option>
+                                                                <option value="01">Janvier</option>
+                                                                <option value="02">Février</option>
+                                                                <option value="03">Mars</option>
+                                                                <option value="04">Avril</option>
+                                                                <option value="05">Mai</option>
+                                                                <option value="06">Juin</option>
+                                                                <option value="07">Juillet</option>
+                                                                <option value="08">Août</option>
+                                                                <option value="09">Septembre</option>
+                                                                <option value="10">Octobre</option>
+                                                                <option value="11">Novembre</option>
+                                                                <option value="12">Décembre</option>
                                                             </select>
                                                             <?php
                                                             if(isset($_POST["item_expired_month"]))
@@ -599,13 +599,13 @@ include('header.php');
                                                                 ';
                                                             }
                                                             ?>
-                                                            <label for="item_expired_month">Expiry Month</label>
+                                                            <label for="item_expired_month">Mois d'expiration</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-floating mb-3">
                                                             <select name="item_expired_year" class="form-control" id="item_expired_year">
-                                                                <option value="">Select</option>
+                                                                <option value="">Sélectionner</option>
                                                                 <?php 
                                                                 for($i = date("Y"); $i < date("Y") + 10; $i++)
                                                                 {
@@ -623,7 +623,7 @@ include('header.php');
                                                                 ';
                                                             }
                                                             ?>
-                                                            <label for="item_expired_year">Expiry Year</label>
+                                                            <label for="item_expired_year">Année d'expiration</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -632,19 +632,19 @@ include('header.php');
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="item_batch_no" type="text" placeholder="Enter Batch Number" name="item_batch_no" value="<?php if(isset($_POST["item_batch_no"])) echo $_POST["item_batch_no"]; ?>" />
-                                                    <label for="item_batch_no">Batch No.</label>
+                                                    <input class="form-control" id="item_batch_no" type="text" placeholder="Entrez le numéro de lot" name="item_batch_no" value="<?php if(isset($_POST["item_batch_no"])) echo $_POST["item_batch_no"]; ?>" />
+                                                    <label for="item_batch_no">N ° de lot.</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="item_sale_price_per_unit" type="number" placeholder="Enter Sale Price per Unit" name="item_sale_price_per_unit" step=".01" value="<?php if(isset($_POST["item_sale_price_per_unit"])) echo $_POST["item_sale_price_per_unit"]; ?>" />
-                                                    <label for="item_sale_price_per_unit">Sale Price per Unit</label>
+                                                    <input class="form-control" id="item_sale_price_per_unit" type="number" placeholder="Entrez le prix de vente par unité" name="item_sale_price_per_unit" step=".01" value="<?php if(isset($_POST["item_sale_price_per_unit"])) echo $_POST["item_sale_price_per_unit"]; ?>" />
+                                                    <label for="item_sale_price_per_unit">Prix de vente par unité</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="mt-4 mb-0">
-                                            <input type="submit" name="add_purchase" class="btn btn-success" value="Add" />
+                                            <input type="submit" name="add_purchase" class="btn btn-success" value="Ajouter" />
                                         </div>
                                     </form>
                                 </div>
@@ -675,8 +675,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="product_purchase.php">Purchase Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Purchase Data</li>
+                                    <li class="breadcrumb-item"><a href="product_purchase.php">Gestion des achats</a></li>
+                                    <li class="breadcrumb-item active">Modifier les données d'achat</li>
                                 </ol>
                                 <?php
                                 if(isset($error) && $error != '')
@@ -687,14 +687,14 @@ include('header.php');
                                 
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        <i class="fas fa-user-plus"></i> Edit Purchase Data
+                                        <i class="fas fa-user-plus"></i> Modifier les données d'achat
                                     </div>
                                     <div class="card-body">
                                         <form method="post">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group mb-3">
-                                                        <label>Select Product</label>
+                                                        <label>Sélectionner un produit</label>
                                                         <select name="item_id" class="form-control input-lg selectpicker" id="item_id" data-live-search="true" data-size="5" data-allow-clear="true" data-noneSelectedText="Select Product">
                                                             <?php echo $object->fill_item(); ?>
                                                         </select>
@@ -723,15 +723,15 @@ include('header.php');
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <div class="form-floating mb-3">
-                                                            <input class="form-control" id="item_purchase_qty" type="number" placeholder="Enter Quantity" name="item_purchase_qty" value="<?php echo $purchase_row["item_purchase_qty"]; ?>" />
-                                                            <label for="item_purchase_qty">Medicine Quantity</label>
+                                                            <input class="form-control" id="item_purchase_qty" type="number" placeholder="Entrez la quantité" name="item_purchase_qty" value="<?php echo $purchase_row["item_purchase_qty"]; ?>" />
+                                                            <label for="item_purchase_qty">Quantité</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="item_purchase_price_per_unit" type="number" placeholder="Enter Purchase Price per Unit" name="item_purchase_price_per_unit" step=".01" value="<?php echo $purchase_row["item_purchase_price_per_unit"]; ?>" />
-                                                        <label for="item_purchase_price_per_unit">Purchase Price per Unit</label>
+                                                        <input class="form-control" id="item_purchase_price_per_unit" type="number" placeholder="Entrez le prix d'achat par unité" name="item_purchase_price_per_unit" step=".01" value="<?php echo $purchase_row["item_purchase_price_per_unit"]; ?>" />
+                                                        <label for="item_purchase_price_per_unit">Prix d'achat par unité</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -741,21 +741,21 @@ include('header.php');
                                                         <div class="col-md-6">
                                                             <div class="form-floating mb-3">
                                                                 <select name="item_manufacture_month" class="form-control" id="item_manufacture_month">
-                                                                    <option value="">Select</option>
-                                                                    <option value="01">January</option>
-                                                                    <option value="02">February</option>
-                                                                    <option value="03">March</option>
-                                                                    <option value="04">April</option>
-                                                                    <option value="05">May</option>
-                                                                    <option value="06">June</option>
-                                                                    <option value="07">July</option>
-                                                                    <option value="08">August</option>
-                                                                    <option value="09">September</option>
-                                                                    <option value="10">October</option>
-                                                                    <option value="11">November</option>
-                                                                    <option value="12">December</option>
+                                                                    <option value="">Sélectionner</option>
+                                                                    <option value="01">Janvier</option>
+                                                                    <option value="02">Février</option>
+                                                                    <option value="03">Mars</option>
+                                                                    <option value="04">Avril</option>
+                                                                    <option value="05">Mai</option>
+                                                                    <option value="06">Juin</option>
+                                                                    <option value="07">Juillet</option>
+                                                                    <option value="08">Août</option>
+                                                                    <option value="09">Septembre</option>
+                                                                    <option value="10">Octobre</option>
+                                                                    <option value="11">Novembre</option>
+                                                                    <option value="12">Décembre</option>
                                                                 </select>
-                                                                <label for="item_manufacture_month">Mfg. Month</label>
+                                                                <label for="item_manufacture_month">Mois de fabrication</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -769,7 +769,7 @@ include('header.php');
                                                                     }
                                                                     ?>
                                                                 </select>
-                                                                <label for="item_manufacture_year">Mfg. Year</label>
+                                                                <label for="item_manufacture_year">Année de fabrication</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -779,27 +779,27 @@ include('header.php');
                                                         <div class="col-md-6">
                                                             <div class="form-floating mb-3">
                                                                 <select name="item_expired_month" class="form-control" id="item_expired_month">
-                                                                    <option value="">Select</option>
-                                                                    <option value="01">January</option>
-                                                                    <option value="02">February</option>
-                                                                    <option value="03">March</option>
-                                                                    <option value="04">April</option>
-                                                                    <option value="05">May</option>
-                                                                    <option value="06">June</option>
-                                                                    <option value="07">July</option>
-                                                                    <option value="08">August</option>
-                                                                    <option value="09">September</option>
-                                                                    <option value="10">October</option>
-                                                                    <option value="11">November</option>
-                                                                    <option value="12">December</option>
+                                                                    <option value="">Sélectionner</option>
+                                                                    <option value="01">Janvier</option>
+                                                                    <option value="02">Février</option>
+                                                                    <option value="03">Mars</option>
+                                                                    <option value="04">Avril</option>
+                                                                    <option value="05">Mai</option>
+                                                                    <option value="06">Juin</option>
+                                                                    <option value="07">Juillet</option>
+                                                                    <option value="08">Août</option>
+                                                                    <option value="09">Septembre</option>
+                                                                    <option value="10">Octobre</option>
+                                                                    <option value="11">Novembre</option>
+                                                                    <option value="12">Décembre</option>
                                                                 </select>
-                                                                <label for="item_expired_month">Expiry Month</label>
+                                                                <label for="item_expired_month">Mois d'expiration</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating mb-3">
                                                                 <select name="item_expired_year" class="form-control" id="item_expired_year">
-                                                                    <option value="">Select</option>
+                                                                    <option value="">Sélectionner</option>
                                                                     <?php 
                                                                     for($i = date("Y"); $i < date("Y") + 10; $i++)
                                                                     {
@@ -807,7 +807,7 @@ include('header.php');
                                                                     }
                                                                     ?>
                                                                 </select>
-                                                                <label for="item_expired_year">Expiry Year</label>
+                                                                <label for="item_expired_year">Année d'expiration</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -816,20 +816,20 @@ include('header.php');
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="item_batch_no" type="text" placeholder="Enter Batch Number" name="item_batch_no" value="<?php echo $purchase_row["item_batch_no"]; ?>" />
-                                                        <label for="item_batch_no">Medicine Batch No.</label>
+                                                        <input class="form-control" id="item_batch_no" type="text" placeholder="Entrez le numéro de lot" name="item_batch_no" value="<?php echo $purchase_row["item_batch_no"]; ?>" />
+                                                        <label for="item_batch_no">N ° de lot.</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="item_sale_price_per_unit" type="number" placeholder="Enter Sale Price per Unit" name="item_sale_price_per_unit" step=".01" value="<?php echo $purchase_row["item_sale_price_per_unit"]; ?>" />
-                                                        <label for="item_sale_price_per_unit">Sale Price per Unit</label>
+                                                        <input class="form-control" id="item_sale_price_per_unit" type="number" placeholder="Entrez le prix de vente par unité" name="item_sale_price_per_unit" step=".01" value="<?php echo $purchase_row["item_sale_price_per_unit"]; ?>" />
+                                                        <label for="item_sale_price_per_unit">Prix de vente par unité</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
                                                 <input type="hidden" name="item_purchase_id" value="<?php echo trim($_GET["code"]); ?>" />
-                                                <input type="submit" name="edit_purchase" class="btn btn-primary" value="Edit" />
+                                                <input type="submit" name="edit_purchase" class="btn btn-primary" value="Éditer" />
                                             </div>
                                         </form>
                                     </div>
@@ -866,7 +866,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Purchase Management</li>
+                                <li class="breadcrumb-item active">Gestion des achats</li>
                             </ol>
 
                             <?php
@@ -875,19 +875,19 @@ include('header.php');
                             {
                                 if($_GET["msg"] == 'add')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">New Product Purchase Detail Added<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Nouveau détail d achat de produit ajouté<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'edit')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Product Purchase Data Edited <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Données d achat de produit modifiées <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'disable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Product Purchase Status Change to Disable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification du statut d achat du produit à Désactiver <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'enable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Product Purchase Status Change to Enable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification du statut d achat du produit sur Activer <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                             }
 
@@ -896,10 +896,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Purchase Management
+                                            <i class="fas fa-table me-1"></i> Gestion des achats
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="product_purchase.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="product_purchase.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -908,20 +908,18 @@ include('header.php');
                                     <table id="purchase_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Product Name</th>
-                                                <th>Batch No.</th>
-                                                <th>Supplier</th>
-                                                <th>Quantity</th>
-                                                <th>Available Qty.</th>
-                                                <th>Price per Unit</th>
-                                                <th>Total Cost</th>
-                                                <th>Mfg. Date</th>
-                                                <th>Expiry Date</th>
-                                                <th>Sale Price</th>
-                                                <th>Purchase Date</th>
+                                                <th>Nom du produit</th>
+                                                <th>N ° de lot.</th>
+                                                <th>Le fournisseur</th>
+                                                <th>Quantité</th>
+                                                <th>Quantité disponible</th>
+                                                <th>Prix ​​par unité</th>
+                                                <th>Coût total</th>
+                                                <th>Date de fabrication</th>
+                                                <th>Date d'expiration</th>
+                                                <th>Prix ​​de vente</th>
+                                                <th>Date d'achat</th>
                                                 <th>Status</th>
-                                                <!--<th>Added On</th>
-                                                <th>Updated On</th>!-->
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

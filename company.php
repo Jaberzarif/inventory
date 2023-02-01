@@ -26,13 +26,13 @@ if(isset($_POST["add_company"]))
 
     if(empty($_POST["company_name"]))
     {
-        $error .= '<li>Company Name is required</li>';
+        $error .= '<li>Le nom de l entreprise est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["company_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>Seuls les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -42,19 +42,19 @@ if(isset($_POST["add_company"]))
 
     if(empty($_POST["company_short_name"]))
     {
-        $error .= '<li>Company Short Name is required</li>';
+        $error .= '<li>Le nom abrégé de l entreprise est requis</li>';
     }
     else
     {
         if (!preg_match("/^[A-Za-z']*$/", $_POST["company_short_name"]))
         {
-            $error .= '<li>Only letters allowed</li>';
+            $error .= '<li>Seules les lettres sont autorisées</li>';
         }
         else
         {
             if(strlen($_POST["company_short_name"]) > 3 && strlen($_POST["company_short_name"]) < 3)
             {
-                $error .= '<li>Company Short Name must be only 3 characters</li>';
+                $error .= '<li>Le nom abrégé de l entreprise ne doit comporter que 3 caractères</li>';
             }
             else
             {
@@ -105,13 +105,13 @@ if(isset($_POST["edit_company"]))
 
     if(empty($_POST["company_name"]))
     {
-        $error .= '<li>Company Name is required</li>';
+        $error .= '<li>Le nom de l entreprise est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["company_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>Seuls les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -121,19 +121,19 @@ if(isset($_POST["edit_company"]))
 
     if(empty($_POST["company_short_name"]))
     {
-        $error .= '<li>Company Short Name is required</li>';
+        $error .= '<li>Le nom abrégé de l entreprise est requis</li>';
     }
     else
     {
         if (!preg_match("/^[A-Za-z']*$/", $_POST["company_short_name"]))
         {
-            $error .= '<li>Only letters allowed</li>';
+            $error .= '<li>Seules les lettres sont autorisées</li>';
         }
         else
         {
             if(strlen($_POST["company_short_name"]) > 3 && strlen($_POST["company_short_name"]) < 3)
             {
-                $error .= '<li>Company Short Name must be only 3 characters</li>';
+                $error .= '<li>Le nom abrégé de l entreprise ne doit comporter que 3 caractères</li>';
             }
             else
             {
@@ -210,7 +210,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Company Management</h1>
+                            <h1 class="mt-4">Gestion de l'entreprise</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -221,8 +221,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="company.php">Medicine Company Management</a></li>
-                                <li class="breadcrumb-item active">Add Company</li>
+                                <li class="breadcrumb-item"><a href="company.php">Gestion de entreprise</a></li>
+                                <li class="breadcrumb-item active">Ajouter une entreprise</li>
                             </ol>
                             <div class="row">
                                 <div class="col-md-6">
@@ -234,17 +234,17 @@ include('header.php');
                                     ?>
                                     <div class="card mb-4">
                                         <div class="card-header">
-                                            <i class="fas fa-user-plus"></i> Add Company
+                                            <i class="fas fa-user-plus"></i> Ajouter une entreprise
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
                                                 <div class="form-floating mb-3">
                                                     <input class="form-control" id="company_name" type="text" placeholder="Enter Company Name" name="company_name" value="<?php if(isset($_POST["company_name"])) echo $_POST["company_name"]; ?>" />
-                                                    <label for="company_name">Company Name</label>
+                                                    <label for="company_name">Nom de la compagnie</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="company_short_name" type="text" placeholder="Enter Company Short Name" name="company_short_name" value="<?php if(isset($_POST["company_short_name"])) echo $_POST["company_short_name"]; ?>" maxlength="3" style="text-transform:uppercase" />
-                                                    <label for="company_short_name">Company Short Name</label>
+                                                    <input class="form-control" id="company_short_name" type="text" placeholder="Enter Nom abrégé de l'entreprise" name="company_short_name" value="<?php if(isset($_POST["company_short_name"])) echo $_POST["company_short_name"]; ?>" maxlength="3" style="text-transform:uppercase" />
+                                                    <label for="company_short_name">Nom abrégé de l'entreprise</label>
                                                 </div>
                                                 <div class="mt-4 mb-0">
                                                     <input type="submit" name="add_company" class="btn btn-success" value="Add" />
@@ -274,8 +274,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="company.php">Medicine Company Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Company</li>
+                                    <li class="breadcrumb-item"><a href="company.php">Gestion de entreprise</a></li>
+                                    <li class="breadcrumb-item active">Modifier l'entreprise</li>
                                 </ol>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -287,17 +287,17 @@ include('header.php');
                                         ?>
                                         <div class="card mb-4">
                                             <div class="card-header">
-                                                <i class="fas fa-user-edit"></i> Edit Company
+                                                <i class="fas fa-user-edit"></i> Modifier l'entreprise
                                             </div>
                                             <div class="card-body">
                                                 <form method="post">
                                                     <div class="form-floating mb-3">
                                                         <input class="form-control" id="company_name" type="text" placeholder="Enter Company Name" name="company_name" value="<?php echo $company_row["company_name"]; ?>" />
-                                                        <label for="company_name">Company Name</label>
+                                                        <label for="company_name">Nom de la compagnie</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="company_short_name" type="text" placeholder="Enter Company Short Name" name="company_short_name" value="<?php echo $company_row["company_short_name"]; ?>" maxlength="3" style="text-transform:uppercase" />
-                                                        <label for="company_short_name">Company Short Name</label>
+                                                        <input class="form-control" id="company_short_name" type="text" placeholder="Enter Nom abrégé de l'entreprise" name="company_short_name" value="<?php echo $company_row["company_short_name"]; ?>" maxlength="3" style="text-transform:uppercase" />
+                                                        <label for="company_short_name">Nom abrégé de l'entreprise</label>
                                                     </div>
                                                     <div class="mt-4 mb-0">
                                                         <input type="hidden" name="item_manufacuter_company_id" value="<?php echo trim($_GET["code"]); ?>" />
@@ -330,7 +330,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Company Management</li>
+                                <li class="breadcrumb-item active">Gestion de l'entreprise</li>
                             </ol>
 
                             <?php
@@ -339,19 +339,19 @@ include('header.php');
                             {
                                 if($_GET["msg"] == 'add')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">New Company Added<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Nouvelle société ajoutée<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'edit')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Company Data Edited <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Données de l entreprise modifiées <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'disable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Company Status Change to Disable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification du statut de l entreprise à Désactiver <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'enable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Company Status Change to Enable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification du statut de l entreprise à Activer <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                             }
 
@@ -360,10 +360,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Company Management
+                                            <i class="fas fa-table me-1"></i> Gestion de l'entreprise
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="company.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="company.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -372,11 +372,11 @@ include('header.php');
                                     <table id="company_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Company Name</th>
-                                                <th>Short Name</th>
-                                                <th>Status</th>
-                                                <th>Added On</th>
-                                                <th>Updated On</th>
+                                                <th>Nom de la compagnie</th>
+                                                <th>Nom court</th>
+                                                <th>Statut</th>
+                                                <th>Ajouté le</th>
+                                                <th>Mis à jour le</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

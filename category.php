@@ -159,7 +159,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Category Management</h1>
+                            <h1 class="mt-4">Gestion des catégories</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -170,8 +170,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="category.php">Category Management</a></li>
-                                <li class="breadcrumb-item active">Add Category</li>
+                                <li class="breadcrumb-item"><a href="category.php">Gestion des catégories</a></li>
+                                <li class="breadcrumb-item active">Ajouter une catégorie</li>
                             </ol>
                             <div class="row">
                                 <div class="col-md-6">
@@ -183,16 +183,16 @@ include('header.php');
                                     ?>
                                     <div class="card mb-4">
                                         <div class="card-header">
-                                            <i class="fas fa-user-plus"></i> Add New Category
+                                            <i class="fas fa-user-plus"></i> Ajouter une nouvelle catégorie
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="category_name" type="text" placeholder="Enter Category Name" name="category_name" value="<?php if(isset($_POST["category_name"])) echo $_POST["category_name"]; ?>" />
-                                                    <label for="category_name">Category Name</label>
+                                                    <input class="form-control" id="category_name" type="text" placeholder="Entrez le nom de la catégorie" name="category_name" value="<?php if(isset($_POST["category_name"])) echo $_POST["category_name"]; ?>" />
+                                                    <label for="category_name">Nom de catégorie</label>
                                                 </div>
                                                 <div class="mt-4 mb-0">
-                                                    <input type="submit" name="add_category" class="btn btn-success" value="Add" />
+                                                    <input type="submit" name="add_category" class="btn btn-success" value="Ajouter" />
                                                 </div>
                                             </form>
                                         </div>
@@ -219,8 +219,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="category.php">Category Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Category</li>
+                                    <li class="breadcrumb-item"><a href="category.php">Gestion des catégories</a></li>
+                                    <li class="breadcrumb-item active">Modifier la catégorie</li>
                                 </ol>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -232,13 +232,13 @@ include('header.php');
                                         ?>
                                         <div class="card mb-4">
                                             <div class="card-header">
-                                                <i class="fas fa-user-edit"></i> Edit Category Details
+                                                <i class="fas fa-user-edit"></i> Modifier les détails de la catégorie
                                             </div>
                                             <div class="card-body">
                                                 <form method="post">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="category_name" type="text" placeholder="Enter Category Name" name="category_name" value="<?php echo $category_row["category_name"]; ?>" />
-                                                        <label for="category_name">Category Name</label>
+                                                        <input class="form-control" id="category_name" type="text" placeholder="Entrez le nom de la catégorie" name="category_name" value="<?php echo $category_row["category_name"]; ?>" />
+                                                        <label for="category_name">Nom de catégorie</label>
                                                     </div>
                                                     <div class="mt-4 mb-0">
                                                         <input type="hidden" name="category_id" value="<?php echo trim($_GET["code"]); ?>" />
@@ -271,7 +271,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Category Management</li>
+                                <li class="breadcrumb-item active">Gestion des catégories</li>
                             </ol>
 
                             <?php
@@ -280,19 +280,19 @@ include('header.php');
                             {
                                 if($_GET["msg"] == 'add')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">New Category Added<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Nouvelle catégorie ajoutée<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'edit')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Category Data Edited <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Données de catégorie modifiées <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'disable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Category Status Change to Disable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification de l état de la catégorie à Désactiver <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'enable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Category Status Change to Enable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification de l état de la catégorie à Activer <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                             }
 
@@ -301,10 +301,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Category Management
+                                            <i class="fas fa-table me-1"></i> Gestion des catégories
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="category.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="category.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -313,9 +313,9 @@ include('header.php');
                                     <table id="category_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Category Name</th>
-                                                <th>Status</th>
-                                                <th>Date & Time</th>
+                                                <th>Nom de catégorie</th>
+                                                <th>Statut</th>
+                                                <th>Date et heure</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

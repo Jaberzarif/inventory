@@ -48,7 +48,7 @@ if(isset($_POST["add_product"]))
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["item_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>Seuls les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -67,7 +67,7 @@ if(isset($_POST["add_product"]))
 
     if(empty($_POST["item_manufactured_by"]))
     {
-        $error .= '<li>Manufacturing Company is required</li>';
+        $error .= '<li>La société de fabrication est requise</li>';
     }
     else
     {
@@ -76,7 +76,7 @@ if(isset($_POST["add_product"]))
 
     if(empty($_POST["item_category"]))
     {
-        $error .= '<li>Category is required</li>';
+        $error .= '<li>La catégorie est obligatoire</li>';
     }
     else
     {
@@ -85,7 +85,7 @@ if(isset($_POST["add_product"]))
 
     if(empty($_POST["item_location_rack"]))
     {
-        $error .= '<li>Location Rack is required</li>';
+        $error .= '<li>Le rack d emplacement est requis</li>';
     }
     else
     {
@@ -138,13 +138,13 @@ if(isset($_POST["edit_product"]))
 
     if(empty($_POST["item_name"]))
     {
-        $error .= '<li>Product Name is required</li>';
+        $error .= '<li>Le nom du produit est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["item_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>Seuls les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -154,7 +154,7 @@ if(isset($_POST["edit_product"]))
 
     if(empty($_POST["item_manufactured_by"]))
     {
-        $error .= '<li>Manufacturing Company is required</li>';
+        $error .= '<li>La société de fabrication est requise</li>';
     }
     else
     {
@@ -163,7 +163,7 @@ if(isset($_POST["edit_product"]))
 
     if(empty($_POST["item_category"]))
     {
-        $error .= '<li>Category is required</li>';
+        $error .= '<li>La catégorie est obligatoire</li>';
     }
     else
     {
@@ -172,7 +172,7 @@ if(isset($_POST["edit_product"]))
 
     if(empty($_POST["item_location_rack"]))
     {
-        $error .= '<li>Location Rack is required</li>';
+        $error .= '<li>Le rack d emplacement est requis</li>';
     }
     else
     {
@@ -194,7 +194,7 @@ if(isset($_POST["edit_product"]))
 
         if($object->row_count() > 0)
         {
-            $error = '<li>Product Name Already Exists</li>';
+            $error = '<li>Le nom du produit existe déjà</li>';
         }
         else
         {
@@ -256,7 +256,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Product Management</h1>
+                            <h1 class="mt-4">Gestion des produits</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -267,8 +267,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="product.php">Product Management</a></li>
-                                <li class="breadcrumb-item active">Add Product</li>
+                                <li class="breadcrumb-item"><a href="product.php">Gestion des produits</a></li>
+                                <li class="breadcrumb-item active">Ajouter un produit</li>
                             </ol>
 
                             <?php
@@ -280,15 +280,15 @@ include('header.php');
 
                             <div class="card mb-4">
                                 <div class="card-header">
-                                    <i class="fas fa-user-plus"></i> Add Product
+                                    <i class="fas fa-user-plus"></i> Ajouter un produit
                                 </div>
                                 <div class="card-body">
                                     <form method="post">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="item_name" type="text" placeholder="Enter Product Name" name="item_name" value="<?php if(isset($_POST["item_name"])) echo $_POST["item_name"]; ?>" />
-                                                    <label for="item_name">Product Name</label>
+                                                    <input class="form-control" id="item_name" type="text" placeholder="Entrez le nom du produit" name="item_name" value="<?php if(isset($_POST["item_name"])) echo $_POST["item_name"]; ?>" />
+                                                    <label for="item_name">Nom du produit</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -306,7 +306,7 @@ include('header.php');
                                                         ';
                                                     }
                                                     ?>
-                                                    <label for="item_manufactured_by">Product Manufacture By</label>
+                                                    <label for="item_manufactured_by">Fabrication du produit par</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -326,7 +326,7 @@ include('header.php');
                                                         ';
                                                     }
                                                     ?>
-                                                    <label for="item_category">Category</label>
+                                                    <label for="item_category">Catégorie</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -344,22 +344,12 @@ include('header.php');
                                                         ';
                                                     }
                                                     ?>
-                                                    <label for="item_location_rack">Location Rack</label>
+                                                    <label for="item_location_rack">Support d'emplacement</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--<div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-floating mb-3">
-                                                    <select name="tax_id" id="tax_id" class="form-control selectpicker"data-live-search="true" data-live-search-style="begins" title="Please select a lunch ...">
-                                                    <?php //echo $object->fill_tax(); ?>
-                                                    </select>
-                                                    <label for="tax_id">Tax</label>
-                                                </div>
-                                            </div>
-                                        </div>!-->
                                         <div class="mt-4 mb-0">
-                                            <input type="submit" name="add_product" class="btn btn-success" value="Add" />
+                                            <input type="submit" name="add_product" class="btn btn-success" value="Ajouter" />
                                         </div>
                                     </form>
                                 </div>
@@ -384,8 +374,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="product.php">Product Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Product Data</li>
+                                    <li class="breadcrumb-item"><a href="product.php">Gestion des produits</a></li>
+                                    <li class="breadcrumb-item active">Modifier les données du produit</li>
                                 </ol>
                                 <?php
                                 if(isset($error) && $error != '')
@@ -396,7 +386,7 @@ include('header.php');
                                 
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        <i class="fas fa-user-plus"></i> Edit Product
+                                        <i class="fas fa-user-plus"></i> Modifier le produit
                                     </div>
                                     <div class="card-body">
                                         <form method="post">
@@ -412,7 +402,7 @@ include('header.php');
                                                         <select name="item_manufactured_by" class="form-control" id="item_manufactured_by">
                                                             <?php echo $object->fill_company(); ?>
                                                         </select>
-                                                        <label for="item_manufactured_by">Product Manufacture By</label>
+                                                        <label for="item_manufactured_by">Fabrication du produit par</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -422,7 +412,7 @@ include('header.php');
                                                         <select name="item_category" class="form-control" id="item_category">
                                                             <?php echo $object->fill_category(); ?>
                                                         </select>
-                                                        <label for="item_category">Category</label>
+                                                        <label for="item_category">Catégorie</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -430,13 +420,13 @@ include('header.php');
                                                         <select name="item_location_rack" class="form-control" id="item_location_rack">
                                                             <?php echo $object->fill_location_rack(); ?>
                                                         </select>
-                                                        <label for="item_location_rack">Location Rack</label>
+                                                        <label for="item_location_rack">Support d'emplacement</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
                                                 <input type="hidden" name="item_id" value="<?php echo trim($_GET["code"]); ?>" />
-                                                <input type="submit" name="edit_product" class="btn btn-primary" value="Edit" />
+                                                <input type="submit" name="edit_product" class="btn btn-primary" value="Modifier" />
                                             </div>
                                         </form>
                                     </div>
@@ -470,7 +460,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Product Management</li>
+                                <li class="breadcrumb-item active">Gestion des produits</li>
                             </ol>
 
                             <?php
@@ -479,19 +469,19 @@ include('header.php');
                             {
                                 if($_GET["msg"] == 'add')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">New Product Added<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Nouveau produit ajouté<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'edit')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Product Data Edited <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Données produit modifiées <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'disable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Product Status Change to Disable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification de l état du produit à Désactiver <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'enable')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Product Status Change to Enable <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Modification de l état du produit sur Activer <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                             }
 
@@ -500,10 +490,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Product Management
+                                            <i class="fas fa-table me-1"></i> Gestion des produits
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="product.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="product.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -512,14 +502,14 @@ include('header.php');
                                     <table id="product_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Product Name</th>
-                                                <th>Company</th>
-                                                <th>Category</th>
-                                                <th>Location Rack</th>
-                                                <th>Available Quantity</th>                                                
-                                                <th>Status</th>
-                                                <th>Added On</th>
-                                                <th>Updated On</th>
+                                                <th>Nom du produit</th>
+                                                <th>Société</th>
+                                                <th>Catégorie</th>
+                                                <th>Support d'emplacement</th>
+                                                <th>Quantité disponible</th>                                                
+                                                <th>Statut</th>
+                                                <th>Ajouté le</th>
+                                                <th>Mis à jour le</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

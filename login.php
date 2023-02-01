@@ -94,7 +94,7 @@ if(isset($_POST["login_button"]))
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login | Medical Store Management System in PHP</title>
+        <title>Login | Coin des Jouets</title>
         <link href="<?php echo $object->base_url; ?>css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -107,9 +107,9 @@ if(isset($_POST["login_button"]))
                             <div class="col-lg-5">
                                 <br />
                                 <br />
-                                <h1 class="text-center text-danger mt-5"><b>Inventory Management System</b></h1>
+                                <h1 class="text-center text-danger mt-5"><b>Coin des Jouets</b></h1>
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Admin Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Connexion de l'administrateur</h3></div>
                                     <div class="card-body">
                                         <?php
                                         if($message != '')
@@ -121,14 +121,14 @@ if(isset($_POST["login_button"]))
                                         <form method="post">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="user_email" type="text" name="user_email" placeholder="name@example.com" value="<?php if(isset($_POST['user_email'])) echo $_POST['user_email']; ?>" />
-                                                <label for="user_email">Email address</label>
+                                                <label for="user_email">Adresse e-mail</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="user_password" type="password" name="user_password" placeholder="Password" value="<?php if(isset($_POST['user_password'])) echo $_POST['user_password']; ?>" />
-                                                <label for="user_password">Password</label>
+                                                <label for="user_password">Mot de passe</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <input type="submit" name="login_button" class="btn btn-primary" value="Login" />
+                                                <input type="submit" name="login_button" class="btn btn-primary" value="Se Connecter" />
                                             </div>
                                         </form>
                                     </div>
@@ -142,7 +142,7 @@ if(isset($_POST["login_button"]))
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Inventory Management System in PHP <?php echo date('Y'); ?></div>
+                            <div class="text-muted">Copyright &copy; Coin des jouets par Sihem Hadj Bougtef<?php echo date('Y'); ?></div>
                         </div>
                     </div>
                 </footer>

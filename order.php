@@ -40,13 +40,13 @@ if(isset($_POST["add_order"]))
 
     if(empty($_POST["buyer_name"]))
     {
-        $error .= '<li>Customer Name is required</li>';
+        $error .= '<li>Le nom du client est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["buyer_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>Seuls les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -221,13 +221,13 @@ if(isset($_POST["edit_order"]))
 
     if(empty($_POST["buyer_name"]))
     {
-        $error .= '<li>Customer Name is required</li>';
+        $error .= '<li>Le nom du client est requis</li>';
     }
     else
     {
         if (!preg_match("/^[a-zA-Z-0-9' ]*$/", $_POST["buyer_name"]))
         {
-            $error .= '<li>Only letters, Numbers and white space allowed</li>';
+            $error .= '<li>Seuls les lettres, les chiffres et les espaces blancs sont autorisés</li>';
         }
         else
         {
@@ -418,7 +418,7 @@ include('header.php');
 ?>
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Order Management</h1>
+                            <h1 class="mt-4">La gestion des commandes</h1>
 
                         <?php
                         if(isset($_GET["action"], $_GET["code"]))
@@ -429,8 +429,8 @@ include('header.php');
 
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item"><a href="order.php">Order Management</a></li>
-                                <li class="breadcrumb-item active">Add Order</li>
+                                <li class="breadcrumb-item"><a href="order.php">La gestion des commandes</a></li>
+                                <li class="breadcrumb-item active">Ajouter une commande</li>
                             </ol>
 
                             <?php
@@ -442,15 +442,15 @@ include('header.php');
                             <span id="msg_area"></span>
                             <div class="card mb-4">
                                 <div class="card-header">
-                                    <i class="fas fa-user-plus"></i> Add Order
+                                    <i class="fas fa-user-plus"></i> Ajouter une commande
                                 </div>
                                 <div class="card-body">
                                     <form method="post">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="buyer_name" type="text" placeholder="Enter Customer Name" name="buyer_name" value="<?php if(isset($_POST["buyer_name"])) echo $_POST["buyer_name"]; ?>" />
-                                                    <label for="buyer_name">Customer Name</label>
+                                                    <input class="form-control" id="buyer_name" type="text" placeholder="Enter Nom du client" name="buyer_name" value="<?php if(isset($_POST["buyer_name"])) echo $_POST["buyer_name"]; ?>" />
+                                                    <label for="buyer_name">Nom du client</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -462,20 +462,20 @@ include('header.php');
                                                 
                                             </div>
                                             <div class="col-md-6">
-                                                <button type="button" name="add_medicine" id="add_medicine" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Product</button>
+                                                <button type="button" name="add_medicine" id="add_medicine" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un produit</button>
                                             </div>
                                         </div>
                                         <div class="table-responsive">
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th width="34%">Product Name</th>
-                                                        <th width="6%">Mfg</th>
-                                                        <th width="11%">Batch No.</th>
-                                                        <th width="11%">Exipry Date</th>
-                                                        <th width="11%">Quantity</th>
-                                                        <th width="11%">Unit Price</th>
-                                                        <th width="11%">Total Price</th>
+                                                        <th width="34%">Nom du produit</th>
+                                                        <th width="6%">Fabricant</th>
+                                                        <th width="11%">N ° de lot.</th>
+                                                        <th width="11%">Date d'expiration</th>
+                                                        <th width="11%">Quantité</th>
+                                                        <th width="11%">Prix ​​unitaire</th>
+                                                        <th width="11%">Prix ​​total</th>
                                                         <th width="5%"></th>
                                                     </tr>
                                                 </thead>
@@ -567,7 +567,7 @@ include('header.php');
                                                 }
                                                 ?>
                                                     <tr>
-                                                        <td colspan="6" align="right"><b>Total</b></td>
+                                                        <td colspan="6" align="right"><b>Totale</b></td>
                                                         <td colspan="2" id="order_total_amount"><?php if(isset($_POST["order_total_amount"])) echo number_format($_POST["order_total_amount"], 2); ?></td>
                                                     </tr>
                                                 </tfoot>
@@ -575,7 +575,7 @@ include('header.php');
                                         </div>
                                         <div class="mt-4 mb-0">
                                             <input type="hidden" name="order_total_amount" id="hidden_order_total_amount" value="<?php if(isset($_POST["order_total_amount"])) echo $_POST["order_total_amount"]; ?>" />
-                                            <input type="submit" name="add_order" class="btn btn-success" value="Add" />
+                                            <input type="submit" name="add_order" class="btn btn-success" value="Ajouter" />
                                         </div>
                                     </form>
                                 </div>
@@ -593,7 +593,7 @@ include('header.php');
                                 //console.log(med_id);
                                 if(item_purchase_id == '')
                                 {
-                                    _('msg_area').innerHTML = '<div class="alert alert-danger">Please Select Product</div>';
+                                    _('msg_area').innerHTML = '<div class="alert alert-danger">Veuillez sélectionner le produit</div>';
                                     setTimeout(function(){
                                         _('msg_area').innerHTML = '';
                                     }, 5000);
@@ -618,7 +618,7 @@ include('header.php');
                                         $('#add_product_id').selectpicker('val', '');
                                         if(responseData.item_available_quantity == 0)
                                         {
-                                            _('msg_area').innerHTML = '<div class="alert alert-danger">This Product Quantity Not Available</div>';
+                                            _('msg_area').innerHTML = '<div class="alert alert-danger">Cette quantité de produit n est pas disponible</div>';
                                             setTimeout(function(){
                                                 _('msg_area').innerHTML = '';
                                             }, 5000);
@@ -738,8 +738,8 @@ include('header.php');
                                 ?>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                    <li class="breadcrumb-item"><a href="order.php">Order Management</a></li>
-                                    <li class="breadcrumb-item active">Edit Order Data</li>
+                                    <li class="breadcrumb-item"><a href="order.php">La gestion des commandes</a></li>
+                                    <li class="breadcrumb-item active">Modifier les données de commande</li>
                                 </ol>
                                 <?php
                                 if(isset($error) && $error != '')
@@ -750,15 +750,15 @@ include('header.php');
                                 
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        <i class="fas fa-user-plus"></i> Edit Order Data
+                                        <i class="fas fa-user-plus"></i> Modifier les données de commande
                                     </div>
                                     <div class="card-body">
                                         <form method="post">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="buyer_name" type="text" placeholder="Enter Customer Name" name="buyer_name" value="<?php echo $order_row["buyer_name"]; ?>" />
-                                                        <label for="buyer_name">Customer Name</label>
+                                                        <input class="form-control" id="buyer_name" type="text" placeholder="Entrez le nom du client" name="buyer_name" value="<?php echo $order_row["buyer_name"]; ?>" />
+                                                        <label for="buyer_name">Nom du client</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -767,13 +767,13 @@ include('header.php');
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th width="34%">Product Name</th>
-                                                            <th width="6%">Mfg</th>
-                                                            <th width="11%">Batch No.</th>
-                                                            <th width="11%">Exipry Date</th>
-                                                            <th width="11%">Quantity</th>
-                                                            <th width="11%">Unit Price</th>
-                                                            <th width="11%">Total Price</th>
+                                                            <th width="34%">Nom du produit</th>
+                                                            <th width="6%">Fabricant</th>
+                                                            <th width="11%">N ° de lot.</th>
+                                                            <th width="11%">Date d'expiration</th>
+                                                            <th width="11%">Quantité</th>
+                                                            <th width="11%">Prix ​​unitaire</th>
+                                                            <th width="11%">Prix ​​total</th>
                                                             <th width="5%"></th>
                                                         </tr>
                                                     </thead>
@@ -843,7 +843,7 @@ include('header.php');
 
                                                         ?>
                                                         <tr>
-                                                            <td colspan="6" align="right"><b>Total</b></td>
+                                                            <td colspan="6" align="right"><b>Totale</b></td>
                                                             <td colspan="2" id="order_total_amount"><?php echo $order_row["order_total_amount"]; ?></td>
                                                         </tr>
                                                     </tfoot>
@@ -949,7 +949,7 @@ include('header.php');
                         
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="index.php">Tableau de bord</a></li>
-                                <li class="breadcrumb-item active">Order Management</li>
+                                <li class="breadcrumb-item active">La gestion des commandes</li>
                             </ol>
 
                             <?php
@@ -958,15 +958,15 @@ include('header.php');
                             {
                                 if($_GET["msg"] == 'add')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">New Order Added<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Nouvelle commande ajoutée<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'edit')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Order Data Edited <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Données de commande modifiées <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                                 if($_GET["msg"] == 'delete')
                                 {
-                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">Order has been deleted <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">La commande a été supprimée <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                                 }
                             }
 
@@ -975,10 +975,10 @@ include('header.php');
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <i class="fas fa-table me-1"></i> Order Management
+                                            <i class="fas fa-table me-1"></i> La gestion des commandes
                                         </div>
                                         <div class="col col-md-6" align="right">
-                                            <a href="order.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Add</a>
+                                            <a href="order.php?action=add&code=<?php echo $object->convert_data('add'); ?>" class="btn btn-success btn-sm">Ajouter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -987,13 +987,13 @@ include('header.php');
                                     <table id="order_data" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Order No.</th>
-                                                <th>Customer Name</th>
-                                                <th>Order Amount</th>
-                                                <th>Created By</th>
-                                                <th>Status</th>
-                                                <th>Added On</th>
-                                                <th>Updated On</th>
+                                                <th>N ° de commande.</th>
+                                                <th>Nom du client</th>
+                                                <th>Montant de la commande</th>
+                                                <th>Créé par</th>
+                                                <th>Statut</th>
+                                                <th>Ajouté le</th>
+                                                <th>Mis à jour le</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

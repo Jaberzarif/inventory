@@ -31,7 +31,7 @@ include('header.php');
 		                                <div class="card bg-primary text-white mb-4">
 		                                    <div class="card-body">
 		                                    	<h2 class="text-center"><?php echo $object->Get_total_no_of_product(); ?></h2>
-		                                    	<h5 class="text-center">In Stock Product</h5>
+		                                    	<h5 class="text-center">Produit en stock</h5>
 		                                    </div>
 		                                </div>
 		                            </div>
@@ -39,7 +39,7 @@ include('header.php');
 		                                <div class="card bg-warning text-white mb-4">
 		                                    <div class="card-body">
 		                                    	<h2 class="text-center"><?php echo $object->Count_outstock_product(); ?></h2>
-		                                    	<h5 class="text-center">Out of Stock Product</h5>
+		                                    	<h5 class="text-center">Produit en rupture de stock</h5>
 		                                    </div>
 		                                </div>
 		                            </div>
@@ -47,7 +47,7 @@ include('header.php');
 		                                <div class="card bg-danger text-white mb-4">
 		                                    <div class="card-body">
 		                                    	<h2 class="text-center"><?php echo $object->cur_sym . number_format(floatval($object->Get_total_product_purchase()), 2, '.', ','); ?></h2>
-		                                    	<h5 class="text-center">Total Purchase</h5>
+		                                    	<h5 class="text-center">Achat total</h5>
 		                                    </div>
 		                                </div>
 		                            </div>
@@ -55,7 +55,7 @@ include('header.php');
 		                                <div class="card bg-success text-white mb-4">
 		                                    <div class="card-body">
 		                                    	<h2 class="text-center"><?php echo $object->cur_sym . number_format(floatval($object->Get_total_product_sale()), 2, '.', ','); ?></h2>
-		                                    	<h5 class="text-center">Total Sale</h5>
+		                                    	<h5 class="text-center">Vente totale</h5>
 		                                    </div>
 		                                </div>
 		                            </div>
@@ -69,7 +69,7 @@ include('header.php');
 		                                    	<div class="row">
 		                                    		<div class="col col-md-9">
 				                                        <i class="fas fa-chart-area me-1"></i>
-				                                        Sale Status
+				                                        Statut de la vente
 				                                    </div>
 				                                    <div class="col col-md-3">
 				                                    	<div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
@@ -87,20 +87,20 @@ include('header.php');
 		                        <div class="card mb-4">
 		                            <div class="card-header">
 		                                <i class="fas fa-table me-1"></i>
-		                                List of Out of Product
+		                                Liste des produits épuisés
 		                            </div>
 		                            <div class="card-body">
 
 		                            	<table id="out_stock_data" class="table table-bordered table-striped">
 	                                        <thead>
 	                                            <tr>
-	                                                <th>Product Name</th>
-	                                                <th>Company</th>
-	                                                <th>Available Quantity</th>
-	                                                <th>Location Rack</th>
-	                                                <th>Status</th>
-	                                                <th>Added On</th>
-	                                                <th>Updated On</th>
+	                                                <th>Nom du produit</th>
+	                                                <th>Société</th>
+	                                                <th>Quantité disponible</th>
+	                                                <th>Support d'emplacement</th>
+	                                                <th>Statut</th>
+	                                                <th>Ajouté le</th>
+	                                                <th>Mis à jour le</th>
 	                                                <th>Action</th>
 	                                            </tr>
 	                                        </thead>
